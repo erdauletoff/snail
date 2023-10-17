@@ -10,12 +10,17 @@ public class Snail
         int days = 0;
 
         while (current < h) {
+            if (days > 999) {
+                System.out.println("Impossible");
+                break;
+            }
             days++;
             current += a;
-            if (current >= h || current > 999) break;
+            if (current >= h) {
+                System.out.println(days);
+                break;
+            }
             current -= b;
         }
-
-        System.out.println(days);
     }
 }
